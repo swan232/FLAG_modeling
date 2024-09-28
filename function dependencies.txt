@@ -1,0 +1,35 @@
+load_data_UCF
+	
+compute_score
+get_rt_dist 
+plot_choiceCurves_v1
+	binit
+fit_sigmoid_function_choice_curve
+alpha_weights
+compute_utility_v2
+gradient_colors
+plot_beta_r_utility
+plot_beta_safe_utility
+	beta_safe_beta_offer_utility
+easy_gridOfEqualFigures
+main_v4_UCF
+	fit_EURLfull_v8_freecurvatures
+		lik_EURLfull_v8_freecurvatures
+			compute_utility_v2
+	plot_choiceCurves_v2
+		plot_choiceCurveProbs_v1
+	plot_histograms_Xfit_v2
+		remove_parameter_outliers
+		add_double_arrow
+	sim_all_full
+		sim_EURLfull_v8_freecurvatures
+			compute_utility_v2
+			invert_utility_v2
+	plot_para_recovery_v2
+	describe_model_parameter
+		plot_correlation_matrix_Xfit_v2
+			bonf_holm
+			imageTextMatrixStars_v3
+		plot_free_weights_v2
+
+plot_histograms_Xfit_individual

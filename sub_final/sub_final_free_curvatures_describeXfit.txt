@@ -1,0 +1,588 @@
+***************************************Curvature for gains ***************************************
+
+p =
+
+   3.0607e-21
+
+
+ci =
+
+    0.4277    0.6030
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -10.9216
+       df: 165
+       sd: 0.5717
+
+Mean curvature for gains is 0.51535, sd is 0.57174, 147 of 166 subjects show diminishing sensitivity, different from 1, p = 3.0607e-21 two tailed
+***************************************Curvature for losses ***************************************
+
+p =
+
+   5.0427e-49
+
+
+ci =
+
+    0.2320    0.3633
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -21.1184
+       df: 167
+       sd: 0.4311
+
+Mean curvature for losses is 0.29767, sd is 0.43106,160 of 168 subjects show diminishing sensitivity, different from 1, p = 5.0427e-49 two tailed
+******************Curvature for gains vs. losses ************************
+
+h =
+
+     1
+
+
+p =
+
+   3.6996e-08
+
+
+ci =
+
+    0.1547    0.3154
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 5.7767
+       df: 165
+       sd: 0.5242
+
+***************************************Loss aversion***************************************
+
+mean_lossaversion =
+
+   5.2619e+04
+
+
+sd_lossaversion =
+
+   3.4327e+05
+
+
+p =
+
+    0.0250
+
+
+ci =
+
+   1.0e+03 *
+
+    8.5477       Inf
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 1.9749
+       df: 165
+       sd: 3.4327e+05
+
+Mean loss aversion is 52618.9229, standard deviation is 343270.6193, 61 of 166 subjects show loss aversion (lambda > 1), greater than 1, p = 0.024972 one tailed
+***************************************Primacy-Recency***************************************
+
+sd_primacy = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    recency: 1.4735
+
+
+p =
+
+    0.0132
+
+
+ci =
+
+    1.0605    1.5094
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 2.5063
+       df: 167
+       sd: 1.4735
+
+Mean alpha is 1.2849, sd is 1.4735,105 of 168 subjects show recency bias (alpha < 1), different from 1, p = 0.013156 two tailed
+***************************************Side bias***************************************
+
+sd_sidebias =
+
+    0.5296
+
+
+p =
+
+    0.0839
+
+
+ci =
+
+   -0.0096    0.1513
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 1.7387
+       df: 168
+       sd: 0.5296
+
+Mean side.bias is 0.070838, sd = 0.52964, 92 of 169 subjects show right bias, 77 of 169 subjects show left bias, subjects show no side bias, p = 0.083915 two tailed
+***************************************Safe bias***************************************
+
+p =
+
+   4.7513e-29
+
+
+ci =
+
+   -0.7075   -0.5288
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -13.6591
+       df: 168
+       sd: 0.5883
+
+Mean safe bias is -0.61816 sd = 0.58834, 147 of 169 subjects show a deck bias (safe.bias < 0), different from 0, p = 4.7513e-29 two tailed
+***************************************Inverse temperature***************************************
+
+p =
+
+   1.0569e-47
+
+
+ci =
+
+    0.0223       Inf
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 20.4750
+       df: 167
+       sd: 0.0153
+
+Mean inverse temperature is 0.024212 sd: 0.015327, 165 of 168 subjects show deterministic/exploitative behavior (inverse.temperature > 0), greater than 0, p = 1.0569e-47 one tailed
+***************************************Curvature for gains ***************************************
+
+p =
+
+   3.0607e-21
+
+
+ci =
+
+    0.4277    0.6030
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -10.9216
+       df: 165
+       sd: 0.5717
+
+Mean curvature for gains is 0.51535, sd is 0.57174, 147 of 166 subjects show diminishing sensitivity, different from 1, p = 3.0607e-21 two tailed
+***************************************Curvature for losses ***************************************
+
+p =
+
+   5.0427e-49
+
+
+ci =
+
+    0.2320    0.3633
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -21.1184
+       df: 167
+       sd: 0.4311
+
+Mean curvature for losses is 0.29767, sd is 0.43106,160 of 168 subjects show diminishing sensitivity, different from 1, p = 5.0427e-49 two tailed
+******************Curvature for gains vs. losses ************************
+
+h =
+
+     1
+
+
+p =
+
+   3.6996e-08
+
+
+ci =
+
+    0.1547    0.3154
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 5.7767
+       df: 165
+       sd: 0.5242
+
+***************************************Loss aversion***************************************
+
+mean_lossaversion =
+
+   5.2619e+04
+
+
+sd_lossaversion =
+
+   3.4327e+05
+
+
+p =
+
+    0.0250
+
+
+ci =
+
+   1.0e+03 *
+
+    8.5477       Inf
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 1.9749
+       df: 165
+       sd: 3.4327e+05
+
+Mean loss aversion is 52618.9229, standard deviation is 343270.6193, 61 of 166 subjects show loss aversion (lambda > 1), greater than 1, p = 0.024972 one tailed
+***************************************Primacy-Recency***************************************
+
+sd_primacy = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    recency: 1.4735
+
+
+p =
+
+    0.0132
+
+
+ci =
+
+    1.0605    1.5094
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 2.5063
+       df: 167
+       sd: 1.4735
+
+Mean alpha is 1.2849, sd is 1.4735,105 of 168 subjects show recency bias (alpha < 1), different from 1, p = 0.013156 two tailed
+***************************************Side bias***************************************
+
+sd_sidebias =
+
+    0.5296
+
+
+p =
+
+    0.0839
+
+
+ci =
+
+   -0.0096    0.1513
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 1.7387
+       df: 168
+       sd: 0.5296
+
+Mean side.bias is 0.070838, sd = 0.52964, 92 of 169 subjects show right bias, 77 of 169 subjects show left bias, subjects show no side bias, p = 0.083915 two tailed
+***************************************Safe bias***************************************
+
+p =
+
+   4.7513e-29
+
+
+ci =
+
+   -0.7075   -0.5288
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -13.6591
+       df: 168
+       sd: 0.5883
+
+Mean safe bias is -0.61816 sd = 0.58834, 147 of 169 subjects show a deck bias (safe.bias < 0), different from 0, p = 4.7513e-29 two tailed
+***************************************Inverse temperature***************************************
+
+p =
+
+   1.0569e-47
+
+
+ci =
+
+    0.0223       Inf
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 20.4750
+       df: 167
+       sd: 0.0153
+
+Mean inverse temperature is 0.024212 sd: 0.015327, 165 of 168 subjects show deterministic/exploitative behavior (inverse.temperature > 0), greater than 0, p = 1.0569e-47 one tailed
+***************************************Curvature for gains ***************************************
+
+p =
+
+   3.0607e-21
+
+
+ci =
+
+    0.4277    0.6030
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -10.9216
+       df: 165
+       sd: 0.5717
+
+Mean curvature for gains is 0.51535, sd is 0.57174, 147 of 166 subjects show diminishing sensitivity, different from 1, p = 3.0607e-21 two tailed
+***************************************Curvature for losses ***************************************
+
+p =
+
+   5.0427e-49
+
+
+ci =
+
+    0.2320    0.3633
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -21.1184
+       df: 167
+       sd: 0.4311
+
+Mean curvature for losses is 0.29767, sd is 0.43106,160 of 168 subjects show diminishing sensitivity, different from 1, p = 5.0427e-49 two tailed
+******************Curvature for gains vs. losses ************************
+
+h =
+
+     1
+
+
+p =
+
+   3.6996e-08
+
+
+ci =
+
+    0.1547    0.3154
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 5.7767
+       df: 165
+       sd: 0.5242
+
+***************************************Loss aversion***************************************
+
+mean_lossaversion =
+
+   5.2619e+04
+
+
+sd_lossaversion =
+
+   3.4327e+05
+
+
+p =
+
+    0.0250
+
+
+ci =
+
+   1.0e+03 *
+
+    8.5477       Inf
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 1.9749
+       df: 165
+       sd: 3.4327e+05
+
+Mean loss aversion is 52618.9229, standard deviation is 343270.6193, 61 of 166 subjects show loss aversion (lambda > 1), greater than 1, p = 0.024972 one tailed
+***************************************Primacy-Recency***************************************
+
+sd_primacy = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    recency: 1.4735
+
+
+p =
+
+    0.0132
+
+
+ci =
+
+    1.0605    1.5094
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 2.5063
+       df: 167
+       sd: 1.4735
+
+Mean alpha is 1.2849, sd is 1.4735,105 of 168 subjects show recency bias (alpha < 1), different from 1, p = 0.013156 two tailed
+***************************************Side bias***************************************
+
+sd_sidebias =
+
+    0.5296
+
+
+p =
+
+    0.0839
+
+
+ci =
+
+   -0.0096    0.1513
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 1.7387
+       df: 168
+       sd: 0.5296
+
+Mean side.bias is 0.070838, sd = 0.52964, 92 of 169 subjects show right bias, 77 of 169 subjects show left bias, subjects show no side bias, p = 0.083915 two tailed
+***************************************Safe bias***************************************
+
+p =
+
+   4.7513e-29
+
+
+ci =
+
+   -0.7075   -0.5288
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: -13.6591
+       df: 168
+       sd: 0.5883
+
+Mean safe bias is -0.61816 sd = 0.58834, 147 of 169 subjects show a deck bias (safe.bias < 0), different from 0, p = 4.7513e-29 two tailed
+***************************************Inverse temperature***************************************
+
+p =
+
+   1.0569e-47
+
+
+ci =
+
+    0.0223       Inf
+
+
+stats = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    tstat: 20.4750
+       df: 167
+       sd: 0.0153
+
+Mean inverse temperature is 0.024212 sd: 0.015327, 165 of 168 subjects show deterministic/exploitative behavior (inverse.temperature > 0), greater than 0, p = 1.0569e-47 one tailed
