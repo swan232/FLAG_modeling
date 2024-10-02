@@ -114,8 +114,8 @@ for i = 1:size(Xfit, 1)
     elseif strcmp(v_symbol{i},'\eta_{-}')
         % Set x-axis limits for eta-
         xlim([0, 4]);
-        text(0, ymax * yscale , 'Concave', 'HorizontalAlignment', 'left', 'FontSize', fontsize);
-        text(3, ymax * yscale, 'Convex', 'HorizontalAlignment', 'right', 'FontSize', fontsize);
+        text(0, ymax * yscale , 'Convex', 'HorizontalAlignment', 'left', 'FontSize', fontsize);
+        text(3, ymax * yscale, 'Concave', 'HorizontalAlignment', 'right', 'FontSize', fontsize);
     end
     
     if intersect(i, [1 2])

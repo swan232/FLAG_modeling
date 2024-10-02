@@ -5,7 +5,12 @@ if remove_outliers
 end
 
 path_describeXfit = [fig_save_dir '\' data_name '_' model_name '_describeXfit.txt'];
+if exist(path_describeXfit, 'file')
+    delete(path_describeXfit); 
+end
+
 diary(path_describeXfit)
+diary on
 
 if strcmp(model_name,'free_curvatures')
     %% curvature for gains
@@ -16,9 +21,10 @@ if strcmp(model_name,'free_curvatures')
     [~, p, ci, stats] = ttest(curvature, 1)
     n_concave = sum(curvature < 1); 
     n_eta = sum(~isnan(curvature));
-    
+    n_near0_gains = sum(abs(curvature - 0) < .001);
+
     disp(['Mean curvature for gains is ' num2str(mean_curvature) ', sd is ' num2str(sd_curvature) ', ' num2str(n_concave) ' of ' num2str(n_eta) ' subjects show diminishing sensitivity, ' ...
-        'different from 1, p = ' num2str(p) ' two tailed'])
+        'different from 1, p = ' num2str(p) ' two tailed, number of near zero curvature: ' num2str(n_near0_gains)])
     
     %% curvature for losses
     disp('***************************************Curvature for losses ***************************************')
@@ -28,10 +34,13 @@ if strcmp(model_name,'free_curvatures')
     [~, p, ci, stats] = ttest(curvature, 1)
     n_concave = sum(curvature < 1); %157
     n_eta = sum(~isnan(curvature));
+    n_near0_losses = sum(abs(curvature - 0) < .001);
     
     disp(['Mean curvature for losses is ' num2str(mean_curvature) ', sd is ' num2str(sd_curvature) ',' num2str(n_concave) ' of ' num2str(n_eta) ' subjects show diminishing sensitivity, ' ...
-        'different from 1, p = ' num2str(p) ' two tailed'])
+        'different from 1, p = ' num2str(p) ' two tailed, number of near zero curvature: ' num2str(n_near0_losses)])
     
+    n_near0_both = sum((abs(Xfit(5,:) - 0) < .001) & (abs(Xfit(6,:) - 0) < .001));
+    disp(['number of near zero for both gains and losses: ' num2str(n_near0_both)])
     %% compare eta+ and eta-
     disp('******************Curvature for gains vs. losses ************************')
     [h, p, ci, stats] = ttest(Xfit(5,:), Xfit(6,:))
@@ -98,8 +107,9 @@ if strcmp(model_name,'free_curvatures')
     disp(['Mean inverse temperature is ' num2str(mean_inversetemperature) ' sd: ' num2str(sd_inversetemperature) ', ' num2str(n_deterministic) ' of ' num2str(n_inversetemperature) ' subjects show deterministic/exploitative behavior (inverse.temperature > 0), ' ...
         'greater than 0, p = ' num2str(p) ' one tailed'])
     
-    diary off
 end
+
+diary off
 
 
 %% Xfit correlation matrix

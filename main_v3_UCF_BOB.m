@@ -159,6 +159,7 @@ text(-0.18, 1.06, 'B', 'Units', 'normalized', 'FontSize', 14, 'FontWeight', 'bol
 load([pwd() '\sub_final\sub_final_free_curvatures_Xfit']);
 load([pwd() '\sub_final\sub_final_free_curvatures_sim']);
 load([pwd() '\sub_final\sub_final_free_curvatures_Xrec']);
+load('global_variables.mat')
 % free curvatures v_names and v_symbols
 v_symbol =  [v_symbol(3:6);{'\eta_{+}', '\eta_{-}'}'];
 v_names = [v_names(3:6); {'curvature for gains', 'curvature for losses'}'];
@@ -177,11 +178,29 @@ plotRecoveryFun(Xfit([3:6,10:11],:), Xrec([3:6,10:11],:));
 
 %% Figure 6 Basic performance in the FLAG Task
 % distribution of mean score and RT 
+sub = compute_score(sub);
 % what would be the avg point if a person behaves randomly?
-sub1 = sub(1);
-meanR = mean([sub1.game.rewards]); % 5 x 100 matrix
-O = [sub1.game.offer];
-mean_score_random = mean([meanR O]); % mean(meanR / 2 + O /2)
+
+O = [-100   20   70 -150 -210  250 -110  -40  110  -40   50 -110 -240  220  410 -170  -60 -320    0  -20   10  -20 -250  -30 -230   50   80  140  110  -70, ...
+   210  280 -210  170  270 -220  150  210   10 -170   90 -130 -290 -200 -190 -140   20  240  270  170 -140 -190  440 -110  -10 -340  290 -240   30  -90,...
+ -250  160  180  -20   70 -160 -400 -120  -80  -30   70  160 -410    0 -110  160 -180   10   70  250 -200  170 -260  160   70 -130  130  -30  240  100,...
+ 110  -80  250  200  110   60   20   50  160 -220];
+
+R = [-180, 50, 120, -80, -160, 140, -160, -60, 100, -80, 130, -40, 0, 150, 130, -90, -90, -130, -30, -60,...
+    +110, +0, -90, -80, -180, -150, +40, -80, +180, +130, +1050, +560, -160, +890, +140, -150, +100, +140, -70, +1050, ...
+    +130, -150, -80, -220, -40, -240, +100, +140, +100, +110, -210, -20, +160, -70, -130, -120, +150, -40, +60, -90, ...
+    -90, +100, +80, +20, +80, -150, -230, -100, -70, -40, +60, -150, -130, -40, -60, +150, +90, +60, +50, +40,...
+    90, -170, -200, 120, -100, -230, 40, 110, 210, 110, +1310, -140, 120, 120, -130, 90, 120, 140, -140, 100];
+mean_score_random = mean([R O])
+% what would be the max average point a person gets
+mean_score_perfect = mean(max([R; O]))
+
+n_better_than_chance = sum([sub.mean_score] > mean_score_random);
+n_no_better_than_chance = sum([sub.mean_score] <= mean_score_random);
+
+[h, p, ci, stats] = ttest([sub.mean_score], mean_score_random, 'Tail','right')
+cohen_d = (mean([sub.mean_score]) - mean_score_random) / std([sub.mean_score])
+
 
 figure(1); clf;
 set(gcf, 'Position', [0, 100, 600, 250]); % Adjust the width and height as needed
@@ -197,6 +216,9 @@ ylim([0 60])
 
 % add vertical dashed line for mean score obtained for random response
 xline(mean_score_random, '--k', 'LineWidth',2);
+% add vertical dashed line for mean score obtained for perfect decision
+% making
+xline(mean_score_perfect, '--r','LineWidth',2)
 
 % Annotation
 % Get axis limits
@@ -206,10 +228,26 @@ pos = get(gca, 'Position'); % get the position of the subplot
 % Compute normalized coordinates for the textarrow, convert the desired
 % coordinates from the subplot's axis to the figure's normalized
 % coordinates
-x_norm = pos(1) + pos(3) * (mean_score_random - xl(1)) / (xl(2) - xl(1));
-y_norm = pos(2) + pos(4) * 0.9;  % Adjust the 0.9 as needed for arrow placement in y-direction
-% Add the textarrow annotation pointing to the dashed line
-annotation('textarrow', [x_norm+0.05, x_norm], [y_norm+0.05, y_norm], 'String', 'Random responding');
+x_norm1 = pos(1) + pos(3) * (mean_score_random - xl(1)) / (xl(2) - xl(1));
+y_norm1 = pos(2) + pos(4) * 0.9;  % Adjust the 0.9 as needed for arrow placement in y-direction
+% % Add the textarrow annotation pointing to the dashed line
+% annotation('textarrow', [x_norm+0.05, x_norm], [y_norm+0.05, y_norm], 'String', 'Random responding');
+
+x_norm2 = pos(1) + pos(3) * (mean_score_perfect - xl(1)) / (xl(2) - xl(1));
+y_norm2 = pos(2) + pos(4) * 0.9;  % Adjust the 0.9 as needed for arrow placement in y-direction
+
+% Add vertical text next to the random responding line
+text(mean_score_random + 3, 20, 'Random responding', 'FontSize', 10, ...
+     'Color', 'k', 'Rotation', 90, 'VerticalAlignment', 'middle')
+
+% Add vertical text next to the optimal responding line
+text(mean_score_perfect + 3, 20, 'Optimal responding', 'FontSize', 10, ...
+     'Color', 'r', 'Rotation', 90, 'VerticalAlignment', 'middle')
+
+
+
+% % Add the textarrow annotation pointing to the dashed line
+% annotation('textarrow', [x_norm+0.05, x_norm], [y_norm+0.05, y_norm], 'String', 'Perfect responding');
 
 title({'average points per game'})
 % Move title 'A' to the upper left corner outside the subplot
